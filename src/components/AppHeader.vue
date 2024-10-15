@@ -1,6 +1,13 @@
 <script>
 export default {
-    
+    data() {
+        return {
+            menu: [
+                { label: 'Home', link: '#' },
+                { label: 'Projects', link: '#' },
+            ],
+        };
+    }
 }
 </script>
 <template>
@@ -12,10 +19,12 @@ export default {
                 </div>
                 <div class="col-4">
                     <ul class="list-unstyled d-flex justify-content-center mt-4">
-                        <li class="mx-3"><a class=" text-decoration-none text-black" href="#">Home</a></li>
-                        <li class=""><a class=" text-decoration-none text-black" href="#">projects</a></li>
+                        <li class="mx-3" v-for="(item, index) in menu" :key="index">
+                            <a class="text-decoration-none text-black" href="#">{{ item.label }}</a>
+                        </li>
                     </ul>
                 </div>
+                
             </div>
         </div>
     </header>
