@@ -1,9 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppProject from './components/AppProject.vue';
 export default {
     components:{
-        AppProject,
         AppHeader,
     }
 }
@@ -11,7 +9,7 @@ export default {
 <template lang="">
     <div>
         <AppHeader />
-        <AppProject />
+        <router-view></router-view>
     </div>
 </template>
 <style lang="scss">
