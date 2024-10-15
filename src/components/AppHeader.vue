@@ -1,10 +1,12 @@
 <script>
+import { router } from '../router';
+
 export default {
     data() {
         return {
             menu: [
-                { label: 'Home', link: '#' },
-                { label: 'Projects', link: '#' },
+                { label: 'Home', name: 'home' },
+                { label: 'Projects', name: 'projects' },
             ],
         };
     }
@@ -20,7 +22,7 @@ export default {
                 <div class="col-4">
                     <ul class="list-unstyled d-flex justify-content-center mt-4">
                         <li class="mx-3" v-for="(item, index) in menu" :key="index">
-                            <a class="text-decoration-none text-black" href="#">{{ item.label }}</a>
+                            <router-link class="text-decoration-none text-black" :to="{name: item.name}">{{ item.label }}</router-link>
                         </li>
                     </ul>
                 </div>
