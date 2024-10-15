@@ -7,16 +7,25 @@ export default {
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
-                    <ul>
-                        <li>Home</li>
-                        <li>projects</li>
+                <div class="col-4 text-center">
+                    <img class="logo" src="../assets/img/logo.png">
+                </div>
+                <div class="col-4">
+                    <ul class="list-unstyled d-flex justify-content-center mt-4">
+                        <li class="mx-3"><a class=" text-decoration-none text-black" href="#">Home</a></li>
+                        <li class=""><a class=" text-decoration-none text-black" href="#">projects</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
 </template>
-<style lang="">
-    
+<style lang="scss" scoped>
+    .logo{
+        width: 120px;
+    }
+
+    header{
+        background-color: rgb(145, 145, 145);
+    }
 </style>
