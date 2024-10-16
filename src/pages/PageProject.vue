@@ -28,13 +28,15 @@ export default {
             </div>
             <div class="row">
                 <div class="col-4" v-for="project in projects" :key="project.id">
-                    <div class="card">
-                        <img class="img-card-top" :src="project.image.startsWith('http') ? project.image : `http://127.0.0.1:8000/storage/${project.image}`" alt="Project Image">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ project.title }}</h4>
-                            <p class="card-text">{{ project.description }}</p>
+                    <router-link class="text-decoration-none" :to="{name: 'single-project', params: { slug: project.slug } }">
+                        <div class="card">
+                            <img class="img-card-top" :src="project.image.startsWith('http') ? project.image : `http://127.0.0.1:8000/storage/${project.image}`" alt="Project Image">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ project.title }}</h4>
+                                <p class="card-text">{{ project.description }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </router-link>
                 </div>
             </div>
         </div>
