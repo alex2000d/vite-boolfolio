@@ -8,10 +8,10 @@ export default {
             project: null
         }
     },
-    methods: {
+    methods:{
         getSingleProject(){
-            axios.get(`${store.baseUrl}/projects/${this.$route,params.slug}`).then((results) =>{
-              this.projects = results.data.results;
+            axios.get(`${store.baseUrl}/projects/${this.$route.params.slug}`).then((result) => {
+              this.project = result.data.result;
             });
         }
     },
@@ -22,13 +22,13 @@ export default {
 </script>
 <template>
   <div class="container">
-    <div class="row">
-        <div class="col-6">
+    <div class="row" v-if="project">
+        <div class="col-6" v-if="project.image">
             <img :src="project.image.startsWith('http') ? project.image : `http://127.0.0.1:8000/storage/${project.image}`" alt="Project Image">
         </div>
         <div class="col-6">
-            <h2>{{ project.title }}</h2>
-            <p>{{ project.technology}}</p>
+            <h2>{{ project.description }}</h2>
+            <p>{{ project.technologies}}</p>
             <p>{{project.type}}</p>
         </div>
     </div>
