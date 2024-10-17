@@ -7,6 +7,7 @@ export default {
             menu: [
                 { label: 'Home', name: 'home' },
                 { label: 'Projects', name: 'projects' },
+                { label: 'contacts', name: 'contacts' },
             ],
         };
     }

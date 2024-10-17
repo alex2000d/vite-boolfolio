@@ -42,7 +42,7 @@ export default {
   
 
               <p v-if="project.type">Tipo: {{ project.type.name }}</p>
-              <p v-else>Tipo: Non specificato</p>
+              <p v-else>Tipo: nessuna tipologia assegnata</p>
         </div>
     </div>
   </div>
