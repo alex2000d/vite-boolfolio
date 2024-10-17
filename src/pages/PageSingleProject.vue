@@ -24,12 +24,25 @@ export default {
   <div class="container">
     <div class="row" v-if="project">
         <div class="col-6" v-if="project.image">
-            <img :src="project.image.startsWith('http') ? project.image : `http://127.0.0.1:8000/storage/${project.image}`" alt="Project Image">
+            <img class="img-fluid mt-5" :src="project.image.startsWith('http') ? project.image : `http://127.0.0.1:8000/storage/${project.image}`" alt="Project Image">
         </div>
         <div class="col-6">
-            <h2>{{ project.description }}</h2>
-            <p>{{ project.technologies}}</p>
-            <p>{{project.type}}</p>
+            <h2 class="mt-5">{{ project.description }}</h2>
+            <div v-if="project.technologies.length > 0">
+                <h4>Tecnologie utilizzate:</h4>
+                <ul>
+                    <li v-for="(technology, index) in project.technologies" :key="index">
+                        {{ technology.name }}
+                    </li>
+                </ul>
+              </div>
+              <div v-else>
+                <p>Non ci sono tecnologie associate a questo progetto.</p>
+              </div>
+  
+
+              <p v-if="project.type">Tipo: {{ project.type.name }}</p>
+              <p v-else>Tipo: Non specificato</p>
         </div>
     </div>
   </div>
